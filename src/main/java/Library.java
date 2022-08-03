@@ -25,9 +25,18 @@ public class Library {
             this.shelf.add(book);
         }
     }
-
     public int getCapacity() {
         return this.capacity;
     }
 
+
+    public Book lendBook(Book bookToBeFound) {
+        int startingShelfLength = shelf.size();
+        shelf.removeIf(n -> (n == bookToBeFound));
+        int endingShelfLength = shelf.size();
+        if (startingShelfLength != endingShelfLength){
+            return bookToBeFound;
+        }
+        return null;
+    }
 }
