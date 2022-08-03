@@ -73,7 +73,6 @@ public class LibraryTest {
     public void cannotLendOutBook(){
         borrower2.borrow(library.lendBook(book1));
         assertEquals(0, library.getFill());
-        System.out.println(borrower2.shelf);
         assertEquals(0, borrower2.getBorrowedLength());
     }
 }
